@@ -2,25 +2,29 @@
 
 main(){
 	int primecount = 0;
-	int ptimesum = 0;
-	int check = 1;
+	int primesum = 0;
 	int number;
 	
 	
 	printf("enter the number: ");
 	scanf("%d" , &number);
-	for(int i = 1 ; i <= number ; i++){
-		for (int count = 2 ; count < i ; count++){
-			if (count %  i == 0){
+	for(int i = 2 ; i <= number ; i++){
+		int primecheck = 1;
+		int count = 2;
+		while ( count < i){
+			if (i % count == 0){
 				primecheck = 0;
+				break;
 			}
+			count = count + 1;
 		}
 		if (primecheck == 1){
 			primecount++;
-			primesum = sum + i;
+			primesum = primesum + i;
 			printf("the number %d is a prime number\n" , i);
 		}
 	}
 	printf("there were %d prime numbers\n" , primecount);
 	printf("the sum of prime numbers is %d\n" , primesum);
 }
+
