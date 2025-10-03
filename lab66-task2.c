@@ -27,4 +27,3 @@ main(){
 	printf("there were %d prime numbers\n" , primecount);
 	printf("the sum of prime numbers is %d\n" , primesum);
 }
-
