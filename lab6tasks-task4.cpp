@@ -1,37 +1,45 @@
 #include<stdio.h>
 
 main(){
-	int number;
-	int firstvalue = 0;
-	int secondvalue = 1;
-	int nextvalue;
-	int sum;
-	int count = 3;
+	char check , letter;
+	int vowel=0;
+	int consonant=0;
 	
-	printf("enter number: ");
-	scanf("%d" , &number);
 	
-	if (number == 1){
-		printf("%d " , firstvalue);
-		sum = firstvalue + secondvalue;
-	}
-	else if( number == 2){
-		printf("%d , %d" , firstvalue , secondvalue);
-		sum = firstvalue + secondvalue;
-	}
-	else{
-		printf("%d , %d" , firstvalue,secondvalue);
-		sum = firstvalue + secondvalue;
-		while (count <= number){
-			nextvalue = firstvalue + secondvalue;
-			printf(", %d" , nextvalue);
-			sum = sum + nextvalue;
-			firstvalue = secondvalue;
-			secondvalue = nextvalue;
-			count++;
-			
+	printf("enter 'y' to start entering letters or enter 'n' to exit: \n");
+	scanf(" %c" , &check);
+	while (check == 'y'){
+		printf("enter your letter: \n");
+		scanf(" %c" , &letter);
+		switch (letter){
+			case 'A':
+			case 'a':
+				vowel++;
+				break;
+			case 'e':
+			case 'E':
+				vowel++;
+				break;
+			case 'i':
+			case 'I':
+				vowel++;
+				break;
+			case 'o':
+			case 'O':
+				vowel++;
+				break;
+			case 'u':
+			case 'U':
+				vowel++;
+				break;
+			default:
+				consonant++;
+				break;
 		}
+		printf("enter 'y' to continue or 'n' for exit: ");
+		scanf(" %c" , &check);
 	}
-	printf("\n");
-	printf("%d" , sum);
+	printf("you entered %d vowels\n" ,vowel);
+	printf("\nyou entered %d consonants" , consonant);
 }
+
